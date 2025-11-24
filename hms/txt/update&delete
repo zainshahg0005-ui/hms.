@@ -1,0 +1,13 @@
+UPDATE Patient
+SET Name = 'Amina Rahman'
+WHERE PatientID = 2;
+
+UPDATE Bill
+SET Status = 'Paid'
+WHERE BillID = 2;
+
+DELETE FROM Patient
+WHERE PatientID = 1;
+
+DELETE FROM MedicalRecord
+WHERE RecordID = 5;

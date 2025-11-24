@@ -1,0 +1,43 @@
++----------------+       +----------------+
+|    Patient     |       |     Doctor     |
++----------------+       +----------------+
+| PK PatientID   |       | PK DoctorID    |
+| Name           |       | Name           |
+| DOB            |       | Specialty      |
+| Gender         |       | ContactInfo    |
+| ContactInfo    |       +----------------+
++----------------+                  |
+       | 1                          | 1
+       |                            |
+       |                            |
+       | N                          | N
++----------------+       +----------------+
+|  Appointment   |       | MedicalRecord  |
++----------------+       +----------------+
+| PK AppointmentID|       | PK RecordID   |
+| FK PatientID    |       | FK PatientID  |
+| FK DoctorID     |       | Diagnosis     |
+| AppointmentDate |       | Treatment     |
+| Reason          |       | RecordDate    |
++----------------+       +----------------+
+       |
+       | 1
+       |
+       | N
++----------------+
+|      Bill      |
++----------------+
+| PK BillID      |
+| FK PatientID   |
+| Amount         |
+| BillDate       |
+| Status         |
++----------------+
+
++----------------+
+|      Admin     |
++----------------+
+| PK id          |
+| username       |
+| password       |
++----------------+

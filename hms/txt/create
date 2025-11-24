@@ -1,0 +1,60 @@
+CREATE DATABASE hms;
+USE hms;
+
+-- Patient Table
+CREATE TABLE Patient (
+    PatientID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100),
+    DOB DATE,
+    Gender ENUM('Male','Female'),
+    ContactInfo VARCHAR(255)
+);
+
+-- Doctor Table
+CREATE TABLE Doctor (
+    DoctorID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100),
+    Specialty VARCHAR(100),
+    ContactInfo VARCHAR(255)
+);
+
+-- Appointment Table
+CREATE TABLE Appointment (
+    AppointmentID INT AUTO_INCREMENT PRIMARY KEY,
+    PatientID INT,
+    DoctorID INT,
+    AppointmentDate DATE,
+    Reason VARCHAR(255),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctor(DoctorID)
+);
+
+-- MedicalRecord Table
+CREATE TABLE MedicalRecord (
+    RecordID INT AUTO_INCREMENT PRIMARY KEY,
+    PatientID INT,
+    Diagnosis VARCHAR(255),
+    Treatment VARCHAR(255),
+    RecordDate DATE,
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
+);
+
+-- Bill Table
+CREATE TABLE Bill (
+    BillID INT AUTO_INCREMENT PRIMARY KEY,
+    PatientID INT,
+    Amount DECIMAL(10,2),
+    BillDate DATE,
+    Status ENUM('Paid','Unpaid'),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
+);
+
+-- Admin table 
+CREATE TABLE Admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(255)
+);
+
+-- Insert admin info
+INSERT INTO Admin (username, password) VALUES ('zain', 'admin');

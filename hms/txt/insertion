@@ -1,0 +1,41 @@
+INSERT INTO Patient (Name, DOB, Gender, ContactInfo) VALUES
+('Ali Reza', '1985-04-12', 'Male', 'ali.reza@example.com'),
+('Ayesha Khan', '1990-09-21', 'Female', 'ayesha.khan@example.com'),
+('Ravi Sharma', '1978-02-05', 'Male', 'ravi.sharma@example.com'),
+('Fatima Noor', '2000-11-15', 'Female', 'fatima.noor@example.com'),
+('Omar Farooqi', '1995-07-30', 'Male', 'omar.farooqi@example.com'),
+('Priya Patel', '1988-03-23', 'Female', 'priya.patel@example.com'),
+('Hassan Ahmadi', '1975-12-10', 'Male', 'hassan.ahmadi@example.com'),
+('Zahra Rahimi', '1992-06-18', 'Female', 'zahra.rahimi@example.com');
+
+
+INSERT INTO Doctor (Name, Specialty, ContactInfo) VALUES
+('Dr. Naveed Qureshi', 'Cardiology', 'naveed.qureshi@hospital.com'),
+('Dr. Sanjay Mehta', 'Orthopedics', 'sanjay.mehta@hospital.com'),
+('Dr. Leila Mohammadi', 'Dermatology', 'leila.mohammadi@hospital.com'),
+('Dr. Amina Siddiqui', 'Pediatrics', 'amina.siddiqui@hospital.com'),
+('Dr. Farid Khan', 'Neurology', 'farid.khan@hospital.com');
+
+
+INSERT INTO Appointment (PatientID, DoctorID, AppointmentDate, Reason) VALUES
+(1, 1, '2025-12-01', 'Regular checkup'),
+(2, 4, '2025-12-02', 'Pediatric consultation'),
+(3, 2, '2025-12-03', 'Knee pain'),
+(4, 3, '2025-12-04', 'Skin rash'),
+(5, 5, '2025-12-05', 'Headache');
+
+
+INSERT INTO MedicalRecord (PatientID, Diagnosis, Treatment, RecordDate) VALUES
+(1, 'Hypertension', 'Medication prescribed', '2025-12-01'),
+(2, 'Common Cold', 'Rest and fluids', '2025-12-02'),
+(3, 'Knee Arthritis', 'Physical therapy', '2025-12-03'),
+(4, 'Eczema', 'Topical cream', '2025-12-04'),
+(5, 'Migraine', 'Painkillers', '2025-12-05');
+
+
+INSERT INTO Bill (PatientID, Amount, BillDate, Status) VALUES
+(1, 150.00, '2025-12-01', 'Paid'),
+(2, 50.00, '2025-12-02', 'Unpaid'),
+(3, 200.00, '2025-12-03', 'Paid'),
+(4, 100.00, '2025-12-04', 'Unpaid'),
+(5, 180.00, '2025-12-05', 'Paid');
